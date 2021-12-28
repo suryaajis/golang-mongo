@@ -16,6 +16,7 @@ func main() {
 	config.Ping(client, ctx) // cek connection to database
 
 	router := gin.Default()
+	router.Use(gin.Logger())
 
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
